@@ -1,17 +1,23 @@
 cmake_minimum_required(VERSION 3.10)
+project(MyProject)  # Root project name
 
-# Set project name
-project(MyProject)
+# Set the C++ standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-set(CMAKE_CXX_STANDARD 11)      # Set the C++ standard to C++11
-set(CMAKE_CXX_STANDARD_REQUIRED ON)  # Enforce the use of C++11 standard
-set(CMAKE_CXX_EXTENSIONS OFF)   # Optional: Disable compiler-specific extensions like GNU extensions
-
-# Include directories
+# Include directories for headers (use CMAKE_SOURCE_DIR to point to the root directory)
 include_directories(${CMAKE_SOURCE_DIR}/inc)
 
-# Add subdirectories (modules)
+# Add the src directory for common files
 add_subdirectory(src)
 
-# Add each module and class directories as subdirectories
-add_subdirectory(Module/Module-6/Class-1)
+# Add subdirectories for modules
+add_subdirectory(Modules/Module-6/Class-1)
+
+# Clean target to delete all generated files
+add_custom_target(
+    clean-all
+    COMMAND ${CMAKE_BUILD_TOOL} clean
+    COMMAND ${CMAKE_COMMAND} -E rm -rf CMakeFiles CMakeCache.txt cmake_install.cmake Makefile
+    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+)
