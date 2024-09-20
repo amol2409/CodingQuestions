@@ -1,14 +1,17 @@
 cmake_minimum_required(VERSION 3.10)
 
-# Set the project name and C++ standard
-project(DailyCodingProblems)
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+# Set project name
+project(MyProject)
 
-# Include common directories (if needed)
-include_directories(${CMAKE_SOURCE_DIR}/include)
+set(CMAKE_CXX_STANDARD 11)      # Set the C++ standard to C++11
+set(CMAKE_CXX_STANDARD_REQUIRED ON)  # Enforce the use of C++11 standard
+set(CMAKE_CXX_EXTENSIONS OFF)   # Optional: Disable compiler-specific extensions like GNU extensions
+
+# Include directories
+include_directories(${CMAKE_SOURCE_DIR}/inc)
+
+# Add subdirectories (modules)
 add_subdirectory(src)
 
-# Add subdirectories for each module
-add_subdirectory(Module-1)
-
+# Add each module and class directories as subdirectories
+add_subdirectory(Module/Module-6/Class-1)

@@ -1,14 +1,10 @@
-#include<iostream>
-#include<vector>
-#include "common.hpp"
+#include "common.h"
+#include <iostream>
+#include <vector>
 
-void logVec(std::vector<int> &vec)
-{
-	for(int x : vec)
-	{
-        std::cout << x << " ";
-	}
-	std::cout << std::endl;
+void logVec(const std::vector<int>& vec) {
+    for (int v : vec) {
+        std::cout << v << " ";
+    }
+    std::cout << std::endl;
 }
-
-

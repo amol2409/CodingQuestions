@@ -1,6 +1,5 @@
-# Create a static library from the common sources
-add_library(common STATIC common.cpp)
+set(SOURCES
+    common.cpp
+)
 
-# Include the common header files (optional)
-target_include_directories(common PUBLIC ${CMAKE_SOURCE_DIR}/inc)
-
+add_library(common ${SOURCES})
