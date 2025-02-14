@@ -1,0 +1,3 @@
+add_executable(linked_list_problems linked_list_problems.cpp)
+target_link_libraries(linked_list_problems PRIVATE Common)
+target_include_directories(linked_list_problems PRIVATE ${CMAKE_SOURCE_DIR}/Common)
